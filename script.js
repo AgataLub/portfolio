@@ -6,6 +6,7 @@ let sentence;
 let childrenLetters;
 let id;
 let paragraph;
+let showBurger = false;
 
 function launchEffects() {
   let menuitems = document.querySelectorAll(".menuitem");
@@ -13,6 +14,8 @@ function launchEffects() {
   for (var i = 0; i < menuitems.length; i++) {
     menuitems[i].addEventListener("mouseenter", getText);
   }
+
+  document.querySelector(".burger").addEventListener("click", toggleBurger);
 }
 
 function getText() {
@@ -25,7 +28,16 @@ function getText() {
   paragraph.innerHTML = "";
 
   sentence.map(createSeparateLetter);
+  addDelay();
+}
 
+function createSeparateLetter(letter) {
+  console.log("createSeparateLetter " + letter);
+
+  paragraph.innerHTML += "<span class=letter>" + letter + "</span>";
+}
+
+function addDelay() {
   let children = paragraph.childNodes;
 
   for (var i = 0; i < children.length; i++) {
@@ -34,10 +46,16 @@ function getText() {
   }
 }
 
-function createSeparateLetter(letter) {
-  console.log("createSeparateLetter " + letter);
+function toggleBurger() {
+  console.log("toggleBurger");
 
-  paragraph.innerHTML += "<span class=letter>" + letter + "</span>";
+  if (showBurger === false) {
+    showBurger = true;
+    document.querySelector(".sidebar").style.display = "block";
+  } else {
+    document.querySelector(".sidebar").style.display = "none";
+    showBurger = false;
+  }
 }
 
 $(document).mousemove(function (event) {
