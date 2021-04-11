@@ -30,9 +30,35 @@ a {
   text-decoration: none;
 }
 
+.skill {
+  border: 1px solid white;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: white;
+  font-size: 1.3em;
+  display: inline;
+  line-height: 2em;
+  margin-right: 10px;
+}
+
+.skill:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  background-blend-mode: lighten;
+}
+
+p > a {
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+p > a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
 img {
-  width: 50px;
-  height: auto;
+  max-height: 200px;
+  max-width: 60%;
 }
 
 .burger {
@@ -42,8 +68,13 @@ img {
 }
 
 .icon:hover,
-.burger:hover {
+.burger:hover,
+.skill:hover {
   animation: down 1s forwards;
+}
+
+.icon {
+  max-height: 50px;
 }
 
 .icons {
@@ -108,15 +139,20 @@ img {
   text-align: right;
 }
 
-p {
-  text-align: justify;
+.tile {
+  text-align: center;
   letter-spacing: 1px;
-  text-indent: 1em;
   border-left: 1px white solid;
-  padding: 1em;
+  margin: 1em;
+  padding-left: 1em;
 }
 
-p:hover {
+p {
+  text-indent: 1em;
+  text-align: justify;
+}
+
+.tile:hover {
   animation: indent 0.5s forwards;
 }
 
