@@ -65,6 +65,7 @@ img {
   padding: 1em;
   display: none;
   position: fixed;
+  background-image: url(img/burger.svg);
 }
 
 .icon:hover,
