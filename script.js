@@ -7,18 +7,27 @@ let childrenLetters;
 let id;
 let paragraph;
 let showBurger = false;
+let i = 0;
 
 function launchEffects() {
   let menuitems = document.querySelectorAll(".menuitem");
 
   for (var i = 0; i < menuitems.length; i++) {
-    menuitems[i].addEventListener("mouseenter", getText);
+    menuitems[i].addEventListener("mousemove", getText);
   }
 
   document.querySelector(".burger").addEventListener("click", toggleBurger);
+
+  window.onresize = function () {
+    console.log("resize window");
+    var sidebar = document.querySelector(".sidebar");
+    if (window.innerWidth >= 961) sidebar.style.display = "";
+  };
 }
 
 function getText() {
+  i++;
+  console.log("getText" + i);
   sentence = this.textContent;
   id = sentence;
   sentence = sentence.split("");
